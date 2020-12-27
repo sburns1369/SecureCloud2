@@ -133,10 +133,10 @@ local NULLREC
   if grep -Fxq "${COIN3}firstrun_complete: true" /usr/local/nullentrydev/mnodes.log
     then
       echo "Not First Run - Testing Check Point"
-      Test_Pause
+      #Test_Pause
     else
       echo "First Run - Test Check Point"
-  Test_Pause
+  #Test_Pause
 #Welcome Disclaimer - welcome.sh
   bash <(curl -Ls https://raw.githubusercontent.com/sburns1369/securecloud2/master/welcome.sh)
   read  -p "Enter choice : " NULLREC
@@ -1219,7 +1219,7 @@ esac
   sudo apt-get -y install libdb4.8-dev
   sudo apt-get -y install libdb4.8++-dev
   echo -e ${YELLOW} "Here be dragons"${CLEAR}
-  sudo apt-get -y install libminiupnpc-dev libzmq3-dev libevent-pthreads-2.0-5
+  sudo apt-get -y install libminiupnpc-dev libzmq3-dev #libevent-pthreads-2.0-5 RIP Library
   sudo apt-get -y install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev
   sudo apt-get -y install libqrencode-dev bsdmainutils unzip
     # Recording Dependencies & Software Libraries insatllation complete
@@ -1290,7 +1290,7 @@ Function_Download_Coinfiles(){
   wget ${DOWNLOADCOINFILES}
   ${DECOMPRESS} ${COINFILES}
   sleep 3
-  sudo mv /root/${COIN3l}/sc2/${COINDAEMON} /root/sc2/${COIN3l}/${COINDAEMONCLI} /usr/local/bin
+  sudo mv /root/${COIN3l}/sc2/${COINDAEMON} /root/${COIN3l}/sc2/${COINDAEMONCLI} /usr/local/bin
   sudo chmod 755 -R  /usr/local/bin/${COINl}*
   Test_Pause
   rm -rf /root/${COIN3l}
@@ -1787,8 +1787,8 @@ Function_Read_Masternode_Key_Table(){
   echo "Found /home/${COINl}1/.${COINl} "
   fi
   #add check before downloading
-  sudo apt-get -y install unrar
-  unrar x rocketstrap.rar /home/${COINl}1/.${COINl}
+  #sudo apt-get -y install unrar - no need for unrar, using tar
+  tar -xvf rocketstrap.tar -C /home/${COINl}1/.${COINl}
 #add hash Check
 #compare hash
   #Test_Pause
