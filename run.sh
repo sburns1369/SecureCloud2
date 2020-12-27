@@ -1445,10 +1445,10 @@ Function_Glances(){
   launch_first_node(){
   echo -e ${BOLD}"Launching First ${COIN3} Node"${CLEAR}
   ${COINDAEMON} -datadir=/home/${COINl}1/.${COINl} -daemon -testnet
-  addnode 73.150.182.108:36210 add
-  addnode 207.180.196.66:36210 add
+  ${COINDAEMONCLI} -datadir=/home/${COINl}1/.${COINl} addnode 73.150.182.108:36210 add
+  ${COINDAEMONCLI} -datadir=/home/${COINl}1/.${COINl}addnode 207.180.196.66:36210 add
   echo Check addnodes two
-  Test_Pause #flag1
+  Test_Pause #flag2
   sleep 1
     if [ -f /usr/local/nullentrydev/${COIN3l}.log ]; then
       sudo rm -rf /usr/local/nullentrydev/${COIN3l}.log
