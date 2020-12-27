@@ -1296,7 +1296,7 @@ Function_Download_Coinfiles(){
   sleep 3
   sudo mv /root/${COIN3l}/sc2/${COINDAEMON} /root/${COIN3l}/sc2/${COINDAEMONCLI} /usr/local/bin
   sudo chmod 755 -R  /usr/local/bin/${COINl}*
-  Test_Pause
+  #Test_Pause
   rm -rf /root/${COIN3l}
   echo Flag1 - Testing point - confirm coinfiles installed correctly
 
