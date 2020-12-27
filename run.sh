@@ -43,7 +43,7 @@ DOWNLOADCOINFILES=http://nullentry.com/chain/sc2/sc2.zip
 COINFILES=sc2.zip
 DECOMPRESS='unzip'
 #rocketstrap
-NEBootStrap=http://nullentry.com/chain/sc2/rocketstrap.tar
+NEBootStrap=http://nullentry.com/chain/sc2/rocketstrap.zip
 #AddNodeList=http://nullentry.com/chain/scn/addnodes.tbl
 ADDNODE0=207.180.196.66:36210
 ADDNODE1=73.150.182.108:36210
@@ -198,7 +198,7 @@ local NULLREC
     echo -e ${GREEN}"Starting Masternode ${nodeunit}" ${CLEAR}
     echo -e "Please wait" ${YELLOW}
 #remove from testnet - next 3 lines
-${COINDAEMON} -datadir=/home/${COINl}1/.${COINl} --testnet -daemon
+${COINDAEMON} -datadir=/home/${COINl}1/.${COINl} -daemon --testnet
 sleep 10
 ${COINDAEMONCLI} -datadir=/home/${COINl}1/.${COINl} addnode 73.150.182.108:36210 add
 ${COINDAEMONCLI} -datadir=/home/${COINl}1/.${COINl }addnode 207.180.196.66:36210 add
@@ -1802,7 +1802,8 @@ Function_Read_Masternode_Key_Table(){
   fi
   #add check before downloading
   #sudo apt-get -y install unrar - no need for unrar, using tar
-  tar -xvf rocketstrap.tar -C /home/${COINl}1/.${COINl}
+  #tar -xvzf rocketstrap.tar -C /home/${COINl}1/.${COINl}
+  unzip rocketstrap.zip -d /home/${COINl}1/.${COINl}/
 #add hash Check
 #compare hash
   #Test_Pause
