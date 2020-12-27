@@ -198,10 +198,11 @@ local NULLREC
     echo -e ${GREEN}"Starting Masternode ${nodeunit}" ${CLEAR}
     echo -e "Please wait" ${YELLOW}
 #remove from testnet - next 3 lines
-${COINDAEMON} -datadir=/home/${COINl}1/.${COINl} -daemon -testnet
+${COINDAEMON} -datadir=/home/${COINl}1/.${COINl} --testnet -daemon
+sleep 10
 ${COINDAEMONCLI} -datadir=/home/${COINl}1/.${COINl} addnode 73.150.182.108:36210 add
-${COINDAEMONCLI} -datadir=/home/${COINl}1/.${COINl}addnode 207.180.196.66:36210 add
-    ${COINDAEMON} -datadir=${COINHOME}${nodeunit}/${COINCORE} -daemon
+${COINDAEMONCLI} -datadir=/home/${COINl}1/.${COINl }addnode 207.180.196.66:36210 add
+#    ${COINDAEMON} -datadir=${COINHOME}${nodeunit}/${COINCORE} -daemon
     sleep 15
     echo -e ${CLEAR}
     Test_Pause #flag3
@@ -1325,6 +1326,7 @@ Function_Download_Coinfiles(){
   echo "rpcallowip=127.0.0.1" >> /home/${COINl}${nodeunit}/.${COINl}/${COINCONFIG}
   Function_IP_Table_Check
   Function_Masternode_Key_Check
+  echo "testnet=1" >> /home/${COINl}${nodeunit}/.${COINl}/${COINCONFIG}
   echo "server=1" >> /home/${COINl}${nodeunit}/.${COINl}/${COINCONFIG}
   echo "daemon=1" >> /home/${COINl}${nodeunit}/.${COINl}/${COINCONFIG}
   echo "maxconnections=256" >> /home/${COINl}${nodeunit}/.${COINl}/${COINCONFIG}
