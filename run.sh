@@ -43,7 +43,7 @@ DOWNLOADCOINFILES=http://nullentry.com/chain/sc2/sc2.zip
 COINFILES=sc2.zip
 DECOMPRESS='unzip'
 #rocketstrap
-NEBootStrap=http://nullentry.com/chain/sc2/rocketstrap.rar
+NEBootStrap=http://nullentry.com/chain/sc2/rocketstrap.tar
 #AddNodeList=http://nullentry.com/chain/scn/addnodes.tbl
 ADDNODE0=207.180.196.66:36210
 ADDNODE1=73.150.182.108:36210
@@ -1738,7 +1738,9 @@ until ${COINDAEMONCLI} -datadir=/home/${COINl}${nodeunit}/${COINCORE} mnsync sta
     echo \#unless keys are entered in configuration directly.  >> ${DPATH}${COIN3l}mnkey.tbl
     count=0
     until [[ $count = 13 ]]; do
-    ${COINDAEMONCLI} -datadir=/home/${COINl}1/.${COINl} masternode genkey >> ${DPATH}${COIN3l}mnkey.tbl
+    #Dash Based - NO PIVX Fork createmasternodekey
+    ${COINDAEMONCLI} -datadir=/home/${COINl}1/.${COINl} createmasternodekey >> ${DPATH}${COIN3l}mnkey.tbl
+    #${COINDAEMONCLI} -datadir=/home/${COINl}1/.${COINl} masternode genkey >> ${DPATH}${COIN3l}mnkey.tbl
     count=$[$count+1]
     done
     Function_Stop_Masternode
