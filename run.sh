@@ -126,6 +126,7 @@ Function_SecureCloudNetworks_Logo(){
 Function_Rocket_Delay(){
 #bash <(curl -Ls https://raw.githubusercontent.com/sburns1369/)
 echo insert scrolling rocket
+sleep 15
 }
 Function_Check_First_Run(){
 ### Start - First Run Configuration
@@ -1443,7 +1444,7 @@ Function_Glances(){
   ## Start Launch First node
   launch_first_node(){
   echo -e ${BOLD}"Launching First ${COIN3} Node"${CLEAR}
-  ${COINDAEMON} -datadir=/home/${COINl}1/.${COINl} -daemon
+  ${COINDAEMON} -datadir=/home/${COINl}1/.${COINl} -daemon -testnet
   sleep 1
     if [ -f /usr/local/nullentrydev/${COIN3l}.log ]; then
       sudo rm -rf /usr/local/nullentrydev/${COIN3l}.log
