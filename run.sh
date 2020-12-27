@@ -186,7 +186,8 @@ local NULLREC
     #need to add menu
     7) function_masternode_upgrade ;;
     #need to add
-    8) function_menu_Reindex_Masternodes    x) exit 0;;
+    8) function_menu_Reindex_Masternodes ;;
+    x) exit 0;;
     *) echo -e "${RED}Error...${STD}" ${CLEAR} && sleep 2
   esac
   }
@@ -378,7 +379,7 @@ done
   echo -e "${RED} Press [ Y ] for Yes to delete all Null Entry Masternode Manger Files.  This will not impact Masternodes Installed"
   echo -e "${YELLOW} Files will be re-built next time the script is ran.  This is the option you want to repair, redo legacy"
   echo -e "${YELLOW} installations, or simply have no use for the Script Manger"
-  echo -e "${GREEN}" Press [N] for no, or [B] to back out and abort.
+  echo -e "${GREEN} Press [N] for no, or [B] to back out and abort "
   read -p "Enter choice " choice
   case $choice in
   Y) rm -r /usr/local/nullentrydev/ ;;
@@ -1885,7 +1886,7 @@ Function_Read_Masternode_Key_Table(){
 
   #Main Program Core
   clear
-  Function_SecureCloudNetworks_Logo(){
+  Function_SecureCloudNetworks_Logo
   Function_Check_First_Run
   function_first_nodecheck
   while true
