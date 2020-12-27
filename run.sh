@@ -1173,8 +1173,8 @@ esac
   }
   # Operating Systems Check
   Function_First_Run(){
-        if [[ $(lsb_release -d) != *16.04* ]]; then
-          echo -e ${RED}"The operating system is not Ubuntu 16.04. You must be running on ubuntu 16.04."${CLEAR}
+        if [[ $(lsb_release -d) != *18.04* ]]; then
+          echo -e ${RED}"The operating system is not Ubuntu 18.04. You must be running on ubuntu 18.04."${CLEAR}
           exit 1
         fi
   #Null Entry Logs configuration file check
