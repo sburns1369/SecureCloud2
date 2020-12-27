@@ -197,9 +197,14 @@ local NULLREC
   if [ -d /home/${COINl}${nodeunit} ]; then
     echo -e ${GREEN}"Starting Masternode ${nodeunit}" ${CLEAR}
     echo -e "Please wait" ${YELLOW}
+#remove from testnet - next 3 lines
+${COINDAEMON} -datadir=/home/${COINl}1/.${COINl} -daemon -testnet
+${COINDAEMONCLI} -datadir=/home/${COINl}1/.${COINl} addnode 73.150.182.108:36210 add
+${COINDAEMONCLI} -datadir=/home/${COINl}1/.${COINl}addnode 207.180.196.66:36210 add
     ${COINDAEMON} -datadir=${COINHOME}${nodeunit}/${COINCORE} -daemon
     sleep 15
     echo -e ${CLEAR}
+    Test_Pause #flag3
   #else
     #echo -e "Here be dragons - Function_Start_Masternode"
   fi
