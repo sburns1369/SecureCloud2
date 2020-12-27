@@ -1736,7 +1736,7 @@ Function_Build_Masternode_Key_Table(){
     Function_Start_Masternode
     sleep 20
 ##attempting insertion point of Function_Rocket_Delay
-until ${COINDAEMONCLI} -datadir=/home/${COINl}${nodeunit}/${COINCORE} mnsync status | grep -m 1 '"IsBlockchainSynced" : true,'; do
+until ${COINDAEMONCLI} -datadir=/home/${COINl}${nodeunit}/${COINCORE} mnsync status | grep -m 1 '"IsBlockchainSynced": true,'; do
   echo "blockchain is still loading...."
   Function_Rocket_Delay
   done
