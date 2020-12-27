@@ -1290,12 +1290,12 @@ Function_Download_Coinfiles(){
   wget ${DOWNLOADCOINFILES}
   ${DECOMPRESS} ${COINFILES}
   sleep 3
-  sudo mv /root/${COIN3l}/${COINDAEMON} /root/${COIN3l}/${COINDAEMONCLI} /usr/local/bin
-
+  sudo mv /root/${COIN3l}/sc2/${COINDAEMON} /root/sc2/${COIN3l}/${COINDAEMONCLI} /usr/local/bin
   sudo chmod 755 -R  /usr/local/bin/${COINl}*
+  Test_Pause
   rm -rf /root/${COIN3l}
   echo Flag1 - Testing point - confirm coinfiles installed correctly
-  Test_Pause
+
   }
   ##Make Node configuration file
   Function_Build_Node_Directories(){
