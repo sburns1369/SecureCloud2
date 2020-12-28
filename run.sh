@@ -127,7 +127,6 @@ local NULLREC
   Function_Show_Main_Masternode_Menu() {
   local choice
   cd ~
-  clear
   choice=$(dialog --clear \
                   --backtitle "Null Entry - Node Manager - Secure Cloud Network - Test Network (Beta Version - Not for Public Release)" \
                   --title "Masternode Control Menu" \
