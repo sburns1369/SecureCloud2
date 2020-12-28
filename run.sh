@@ -1169,6 +1169,7 @@ esac
   #  fi
   #fi
   echo
+  Test_Pause
   }
   #start Function_AptGet_Update
   Function_AptGet_Update() {
