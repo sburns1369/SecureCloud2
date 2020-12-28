@@ -125,10 +125,10 @@ local NULLREC
   ### End - First Run Configuratio
   #Main menu
   Function_Show_Main_Masternode_Menu() {
-    local choice
+  local choice
   cd ~
   clear
-  CHOICE=$(dialog --clear \
+  choice=$(dialog --clear \
                   --backtitle "Null Entry - Node Manager - Secure Cloud Network - Test Network (Beta Version - Not for Public Release)" \
                   --title "Masternode Control Menu" \
                   --menu "Choose one of the following options:" \
@@ -145,9 +145,9 @@ local NULLREC
                   2>&1 >/dev/tty)
   # Declare variables for Function_Show_Main_Menu
 	case $choice in
-#need to add
+    #need to add
     1) Function_Find_Masternodes ;;
-#need to add
+    #need to add
     2) function_install_masternode ;;
     #need to add
     3) Function_Display_MasternodeConf ;;
