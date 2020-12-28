@@ -138,7 +138,7 @@ local NULLREC
                   "4 "Edit Configuration""
                   "5 "Start Masternode(s)""
                   "6 "Stop Masternode(s)""
-                  "7 "Upgrade Masternode Wallet"
+                  "7 "Upgrade Masternode Wallet""
                   "8 "Re-Index Masternode(s)""
                   "9 "Exit"" \
                   2>&1 >/dev/tty)
