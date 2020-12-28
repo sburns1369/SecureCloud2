@@ -1449,7 +1449,6 @@ Function_Glances(){
   launch_first_node(){
   echo -e ${BOLD}"Launching First ${COIN3} Node"${CLEAR}
   ${COINDAEMON} -datadir=/home/${COINl}1/.${COINl} -daemon #-testnet
-  echo Check addnodes two
   Test_Pause #flag2
   sleep 1
     if [ -f /usr/local/nullentrydev/${COIN3l}.log ]; then
@@ -1902,5 +1901,4 @@ Function_Read_Masternode_Key_Table(){
   while true
   do
   Function_Show_Main_Menu
-  echo
   done
