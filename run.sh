@@ -1167,7 +1167,7 @@ esac
   #  if [ ! -z ${nodeunit} ]; then
   # echo -e ${RED}"No Installation Found for Masternode ${nodeunit} - /home/${COINl}${nodeunit}" ${CLEAR}
   #  fi
-  fi
+  #fi
   echo
   }
   #start Function_AptGet_Update
