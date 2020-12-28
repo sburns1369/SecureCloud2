@@ -173,7 +173,7 @@ local NULLREC
 	read -p "Enter choice : " choice
 	case $choice in
 #need to add
-    1) find_Masternodes ;;
+    1) Function_Find_Masternodes ;;
 #need to add
     2) function_install_masternode ;;
     #need to add
@@ -1147,7 +1147,7 @@ esac
 #        N) echo -e "backing out" ;;
 #        *) echo -e "${RED}Error...${STD}" ${CLEAR} && sleep 2
 #      esac
-#    fi
+    fi
 #      ${COINDAEMONCLI} -datadir=${COINHOME}${nodeunit}/${COINCORE} masternode status &> ${DPATH}${nodeunit}.tmp
 #      DISPIP=$(sed -n '4p' < /usr/local/nullentrydev/${nodeunit}.tmp | cut -d'"' -f4 | cut -d':' -f1)
 #        if [[ "$DISPIP" =~ (([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5]))$ ]]; then
