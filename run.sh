@@ -68,7 +68,7 @@ RED='\033[0;91m'
 YELLOW='\033[0;93m'
 CLEAR='\033[0m'
 #Main Menu Variables
-BackTitleText="Null Entry - Node Manager - Secure Cloud Network - Test Network (Beta Version - Not for Public Release)"
+BackTitleMenuText="Null Entry - Node Manager - Secure Cloud Network - Test Network (Beta Version - Not for Public Release)"
 MM_HEIGHT=17
 MM_WIDTH=60
 MM_CHOICE_HEIGHT=8
