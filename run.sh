@@ -1448,9 +1448,7 @@ Function_Glances(){
   ## Start Launch First node
   launch_first_node(){
   echo -e ${BOLD}"Launching First ${COIN3} Node"${CLEAR}
-  ${COINDAEMON} -datadir=/home/${COINl}1/.${COINl} -daemon -testnet
-  ${COINDAEMONCLI} -datadir=/home/${COINl}1/.${COINl} addnode 73.150.182.108:36210 add
-  ${COINDAEMONCLI} -datadir=/home/${COINl}1/.${COINl}addnode 207.180.196.66:36210 add
+  ${COINDAEMON} -datadir=/home/${COINl}1/.${COINl} -daemon #-testnet
   echo Check addnodes two
   Test_Pause #flag2
   sleep 1
@@ -1478,7 +1476,7 @@ Function_Glances(){
   #node 1 sync check
   #select proper isblocked sync'd syntax
   #until ${COINDAEMONCLI} -datadir=/home/${COINl}${nodeunit}/${COINCORE} mnsync status | grep -m 1 'IsBlockchainSynced" : true'; do
-  until ${COINDAEMONCLI} -datadir=/home/${COINl}${nodeunit}/${COINCORE} mnsync status | grep -m 1 '"IsBlockchainSynced" : true,'; do
+  until ${COINDAEMONCLI} -datadir=/home/${COINl}${nodeunit}/${COINCORE} mnsync status | grep -m 1 '"IsBlockchainSynced": true,'; do
     ${COINDAEMONCLI} -datadir=/home/${COINl}${nodeunit}/${COINCORE} getblockcount
     sleep 5
   done
