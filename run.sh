@@ -132,7 +132,7 @@ local NULLREC
                   --title "Masternode Control Menu" \
                   --menu "Choose one of the following options:" \
                   $MM_HEIGHT $MM_WIDTH $MNM_CHOICE_HEIGHT \
-                 (1 "My Masternode(s) Status"
+                  1 "My Masternode(s) Status"
                   2 "Install or Add Masternodes"
                   3 "Display Masternode Information"
                   4 "Edit Configuration"
@@ -140,7 +140,7 @@ local NULLREC
                   6 "Stop Masternode(s)"
                   7 "Upgrade Masternode Wallet"
                   8 "Re-Index Masternode(s)"
-                  9 "Exit") \
+                  9 "Exit" \
                   2>&1 >/dev/tty)
   # Declare variables for Function_Show_Main_Menu
 	case $choice in
