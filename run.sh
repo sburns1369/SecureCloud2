@@ -1147,7 +1147,7 @@ esac
 #        N) echo -e "backing out" ;;
 #        *) echo -e "${RED}Error...${STD}" ${CLEAR} && sleep 2
 #      esac
-#    fi
+    fi
 #      ${COINDAEMONCLI} -datadir=${COINHOME}${nodeunit}/${COINCORE} masternode status &> ${DPATH}${nodeunit}.tmp
 #      DISPIP=$(sed -n '4p' < /usr/local/nullentrydev/${nodeunit}.tmp | cut -d'"' -f4 | cut -d':' -f1)
 #        if [[ "$DISPIP" =~ (([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5]))$ ]]; then
@@ -1905,5 +1905,4 @@ Function_Read_Masternode_Key_Table(){
   while true
   do
   Function_Show_Main_Menu
-  echo test?
   done
