@@ -71,6 +71,7 @@ CLEAR='\033[0m'
 MM_HEIGHT=17
 MM_WIDTH=60
 MM_CHOICE_HEIGHT=8
+MNM_CHOICE_HEIGHT=10
 MM_MainMenuOptions=(1 "Masternode Manager"
          2 "Staking and Wallet Manager"
          3 "Show All Balances"
@@ -91,36 +92,7 @@ Function_Show_Balance(){
 }
 Function_SecureCloudNetworks_Logo(){
 #  bash <(curl -Ls https://raw.githubusercontent.com/sburns1369/)
-  clear
-  echo "                                                                      ";
-  echo "                                                                      ";
-  echo -e "      ${BLUE}                                                                ";
-  echo "         _____   ___     __  __ __  ____     ___           ";
-  echo "        / ___/  /  _]   /  ]|  T  T|    \   /  _]          ";
-  echo "       (   \_  /  [_   /  / |  |  ||  D  ) /  [_           ";
-  echo "        \__  TY    _] /  /  |  |  ||    / Y    _]          ";
-  echo "        /  \ ||   [_ /   \_ |  :  ||    \ |   [_           ";
-  echo "        \    ||     T\     |l     ||  .  Y|     T          ";
-  echo "         \___jl_____j \____j \__,_jl__j\_jl_____j          ";
-  echo "              __  _       ___   __ __  ___                 ";
-  echo "             /  ]| T     /   \ |  T  T|   \                ";
-  echo "            /  / | |    Y     Y|  |  ||    \               ";
-  echo "           /  /  | l___ |  O  ||  |  ||  D  Y              ";
-  echo "          /   \_ |     T|     ||  :  ||     |              ";
-  echo "          \     ||     |l     !l     ||     |              ";
-  echo "           \____jl_____j \___/  \__,_jl_____j              ";
-  echo " ____     ___  ______  __    __   ___   ____   __  _  _____";
-  echo "|    \   /  _]|      T|  T__T  T /   \ |    \ |  l/ ]/ ___/";
-  echo "|  _  Y /  [_ |      ||  |  |  |Y     Y|  D  )|  ' /(   \_ ";
-  echo "|  |  |Y    _]l_j  l_j|  |  |  ||  O  ||    / |    \ \__  T";
-  echo "|  |  ||   [_   |  |  l  \` /  !|     ||    \ |     Y/  \  |";
-  echo "l__j__jl_____j  l__j    \_/\_/   \___/ l__j\_jl__j\_j \___j";
-    echo -e "${GREEN}                                                           ";
-  echo -e "   ╔╦╗┌─┐┌─┐┌┬┐┌─┐┬─┐┌┐┌┌─┐┌┬┐┌─┐  ╔╦╗┌─┐┌┐┌┌─┐┌─┐┌─┐┬─┐ ";
-  echo -e "   ║║║├─┤└─┐ │ ├┤ ├┬┘││││ │ ││├┤   ║║║├─┤│││├─┤│ ┬├┤ ├┬┘";
-  echo -e "   ╩ ╩┴ ┴└─┘ ┴ └─┘┴└─┘└┘└─┘─┴┘└─┘  ╩ ╩┴ ┴┘└┘┴ ┴└─┘└─┘┴└─";
-  echo -e "                               ";
-  echo -e "${CLEAR}"
+bash <(curl -Ls https://raw.githubusercontent.com/sburns1369/securecloud2/master/scnlogo.sh)
   pause
 }
 Function_Rocket_Delay(){
@@ -156,21 +128,22 @@ local NULLREC
     local choice
   cd ~
   clear
-  echo
-  echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-  echo "        M A I N Masternode M E N U"
-  echo "~~~~~~~~~~~~~~~~~~~~~"
-  echo -e "1 - My Masternode(s) Status"
-  echo -e "2 - Install or Add Masternodes"
-  echo -e "3 - Display Masternode Information"
-  echo -e "4 - Edit Configuration"
-  echo -e "5 - Start Masternode(s)"
-  echo -e "6 - Stop Masternode(s)"
-  echo -e "7 - Upgrade Masternode Wallet"
-  echo -e "8 - Re-Index Masternode(s)"
-  #echo -e "5 - Maintenance"
-  echo -e "X - Exit"
-	read -p "Enter choice : " choice
+  CHOICE=$(dialog --clear \
+                  --backtitle "Null Entry - Node Manager - Secure Cloud Network - Test Network (Beta Version - Not for Public Release)" \
+                  --title "Masternode Control Menu" \
+                  --menu "Choose one of the following options:" \
+                  $MM_HEIGHT $MM_WIDTH $MNM_CHOICE_HEIGHT \
+                  echo -e "1 - My Masternode(s) Status"
+                  echo -e "2 - Install or Add Masternodes"
+                  echo -e "3 - Display Masternode Information"
+                  echo -e "4 - Edit Configuration"
+                  echo -e "5 - Start Masternode(s)"
+                  echo -e "6 - Stop Masternode(s)"
+                  echo -e "7 - Upgrade Masternode Wallet"
+                  echo -e "8 - Re-Index Masternode(s)"
+                  echo -e "X - Exit" \
+                  2>&1 >/dev/tty)
+  # Declare variables for Function_Show_Main_Menu
 	case $choice in
 #need to add
     1) Function_Find_Masternodes ;;
