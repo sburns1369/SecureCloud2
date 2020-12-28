@@ -78,6 +78,15 @@ MM_MainMenuOptions=(1 "Masternode Manager"
          4 "VPS Maintenance Manager"
          5 "Donate"
          6 "Exit")
+Masternode_MenuOptions=(1 "My Masternode(s) Status"
+         2 "Install or Add Masternodes"
+         3 "Display Masternode Information"
+         4 "Edit Configuration"
+         5 "Start Masternode(s)"
+         6 "Stop Masternode(s)"
+         7 "Upgrade Masternode Wallet"
+         8 "Re-Index Masternode(s)"
+         9 "Exit")
 pause(){
 #Pause
   read -p "Press [Enter] key to continue..." fackEnterKey
@@ -132,15 +141,7 @@ local NULLREC
                   --title "Masternode Control Menu" \
                   --menu "Choose one of the following options:" \
                   $MM_HEIGHT $MM_WIDTH $MNM_CHOICE_HEIGHT \
-                  "1 "My Masternode(s) Status""
-                  "2 "Install or Add Masternodes""
-                  "3 "Display Masternode Information""
-                  "4 "Edit Configuration""
-                  "5 "Start Masternode(s)""
-                  "6 "Stop Masternode(s)""
-                  "7 "Upgrade Masternode Wallet""
-                  "8 "Re-Index Masternode(s)""
-                  "9 "Exit"" \
+                  "${Masternode_MenuOptions[@]}" \
                   2>&1 >/dev/tty)
   # Declare variables for Function_Show_Main_Menu
 	case $choice in
