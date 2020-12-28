@@ -162,7 +162,7 @@ local NULLREC
   echo "~~~~~~~~~~~~~~~~~~~~~"
   echo -e "1 - My Masternode(s) Status"
   echo -e "2 - Install or Add Masternodes"
-  echo -e "3 - Display Information"
+  echo -e "3 - Display Masternode Information"
   echo -e "4 - Edit Configuration"
   echo -e "5 - Start Masternode(s)"
   echo -e "6 - Stop Masternode(s)"
@@ -177,7 +177,7 @@ local NULLREC
 #need to add
     2) function_install_masternode ;;
     #need to add
-    3) display_MN_Status ;;
+    3) Function_Display_MasternodeConf ;;
     #need to add
     4) Edit_MN_Status ;;
     #need to add
@@ -994,10 +994,10 @@ esac
   echo -e "10 - Masternode Ten"
   fi
   if [ -d /home/${COINl}11 ]; then
-  echo -e "11 - Masternode Ten"
+  echo -e "11 - Masternode Eleven"
   fi
   if [ -d /home/${COINl}12 ]; then
-  echo -e "12 - Masternode Ten"
+  echo -e "12 - Masternode Twelve"
   fi
   if [ -d /home/${COINl}0 ]; then
   echo -e "10 - Masternode Zero"
@@ -1119,12 +1119,12 @@ esac
   # Find Masternode Test Function
   Function_Find_Masternodes(){
   local choice
-  if [ -d /home/${COINl}${nodeunit} ]; then
-    if [ -z ${nodeunit} ]; then
-    echo -e ${GREEN}"Found SCN-Oldnode Installation Found - /home/${COINl}" ${CLEAR}
-  else
-    echo -e ${GREEN}"Found SCN-${nodeunit} Installation Found - /home/${COINl}${nodeunit}" ${CLEAR}
-  fi
+#  if [ -d /home/${COINl}${nodeunit} ]; then
+#    if [ -z ${nodeunit} ]; then
+#    echo -e ${GREEN}"Found SCN-Oldnode Installation Found - /home/${COINl}" ${CLEAR}
+#  else
+#    echo -e ${GREEN}"Found SCN-${nodeunit} Installation Found - /home/${COINl}${nodeunit}" ${CLEAR}
+#  fi
   ${COINDAEMONCLI} -datadir=${COINHOME}${nodeunit}/${COINCORE} masternodedebug
 #  ${COINDAEMONCLI} -datadir=${COINHOME}${nodeunit}/${COINCORE} masternode status &> ${DPATH}SCNMN${nodeunit}.tmp
 #    if grep -q "Hot node, waiting for remote activation" ${DPATH}SCNMN${nodeunit}.tmp; then
@@ -1147,7 +1147,7 @@ esac
 #        N) echo -e "backing out" ;;
 #        *) echo -e "${RED}Error...${STD}" ${CLEAR} && sleep 2
 #      esac
-    fi
+#    fi
 #      ${COINDAEMONCLI} -datadir=${COINHOME}${nodeunit}/${COINCORE} masternode status &> ${DPATH}${nodeunit}.tmp
 #      DISPIP=$(sed -n '4p' < /usr/local/nullentrydev/${nodeunit}.tmp | cut -d'"' -f4 | cut -d':' -f1)
 #        if [[ "$DISPIP" =~ (([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5]))$ ]]; then
@@ -1161,13 +1161,14 @@ esac
 #        fi
 #        rm -r /usr/local/nullentrydev/${nodeunit}.tmp
   #        echo "Running on IP : ${DISPIP}"
-  SCNOld="1"
-  SCN=$SCN+1
+  #SCNOld="1"
+  #SCN=$SCN+1
   #else
   #  if [ ! -z ${nodeunit} ]; then
   # echo -e ${RED}"No Installation Found for Masternode ${nodeunit} - /home/${COINl}${nodeunit}" ${CLEAR}
   #  fi
   #fi
+  ${COINDAEMONCLI} -datadir=${COINHOME}${nodeunit}/${COINCORE} masternodedebug
   echo
   Test_Pause
   }
