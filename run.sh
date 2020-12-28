@@ -303,8 +303,8 @@ done
   pause
   }
 
-  # Function_Manager_XGSMasternodes menu
-  Function_Manager_XGSMasternodes(){
+  # Function_Manager_SCNMasternodes menu
+  Function_Manager_SCNMasternodes(){
   clear
   echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   echo "        Displaying Masternode Status"
@@ -316,10 +316,10 @@ done
   echo -e "5 -  Re-Index Masternode(s)"
   echo -e "B-   Back - Previous Menu"
   echo -e "X -  Exit"
-  Function_Read_Manager_XGSMasternodes
+  Function_Read_Manager_SCNMasternodes
   }
-  # manager_XGSMasternodes read options
-  Function_Read_Manager_XGSMasternodes(){
+  # manager_SCNMasternodes read options
+  Function_Read_Manager_SCNMasternodes(){
   local choice
   read -p "Enter choice " choice
   case $choice in
@@ -1121,44 +1121,45 @@ esac
   local choice
   if [ -d /home/${COINl}${nodeunit} ]; then
     if [ -z ${nodeunit} ]; then
-    echo -e ${GREEN}"Found XGS-Oldnode Installation Found - /home/${COINl}" ${CLEAR}
+    echo -e ${GREEN}"Found SCN-Oldnode Installation Found - /home/${COINl}" ${CLEAR}
   else
-    echo -e ${GREEN}"Found XGS-${nodeunit} Installation Found - /home/${COINl}${nodeunit}" ${CLEAR}
+    echo -e ${GREEN}"Found SCN-${nodeunit} Installation Found - /home/${COINl}${nodeunit}" ${CLEAR}
   fi
-  ${COINDAEMONCLI} -datadir=${COINHOME}${nodeunit}/${COINCORE} masternode status &> ${DPATH}XGSMN${nodeunit}.tmp
-    if grep -q "Hot node, waiting for remote activation" ${DPATH}XGSMN${nodeunit}.tmp; then
-      echo -e ${YELLOW} "Masternode Ready, waiting for activation from Wallet" ${CLEAR}
-    elif grep -q "Loading block index..." ${DPATH}XGSMN${nodeunit}.tmp; then
-    echo -e ${YELLOW} "Masternode is still loading block Index, please wait." ${CLEAR}
-    elif grep -q "Masternode successfully started" ${DPATH}XGSMN${nodeunit}.tmp; then
-      echo -e ${GREEN} "Masternode Successfully Started" ${CLEAR}
-    elif grep -q "Masternode not found in the list of available masternodes. Current status: Node just started, not yet activated" ${DPATH}XGSMN${nodeunit}.tmp; then
-      echo -e ${YELLOW} "Masternode is loading blocks, Please Wait " ${CLEAR}
-    elif grep -q "error: couldn't connect to server" ${DPATH}XGSMN${nodeunit}.tmp; then
-      echo -e ${RED} "Masternode not running, Please Start"
-      echo
-      echo -e ${GREEN} "Would you like to attempt to start the Masternode? (Y/N) "
-      read -p "Enter choice : " choice
-      case $choice in
-        y) Function_Start_Masternode ;;
-        Y) Function_Start_Masternode ;;
-        n) echo -e "backing out" ;;
-        N) echo -e "backing out" ;;
-        *) echo -e "${RED}Error...${STD}" ${CLEAR} && sleep 2
-      esac
-    fi
-      ${COINDAEMONCLI} -datadir=${COINHOME}${nodeunit}/${COINCORE} masternode status &> ${DPATH}${nodeunit}.tmp
-      DISPIP=$(sed -n '4p' < /usr/local/nullentrydev/${nodeunit}.tmp | cut -d'"' -f4 | cut -d':' -f1)
-        if [[ "$DISPIP" =~ (([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5]))$ ]]; then
-          echo -e "Running on IPv4 :${YELLOW} ${DISPIP}" ${CLEAR}
-        else
-          #tracing problem in 2-3 lines above
-        DISPIP=$(sed -n '4p' < /usr/local/nullentrydev/${nodeunit}.tmp | cut -d'"' -f4 | cut -d':' -f1-8)
-          if [ ! -z "$DISPIP" ]; then
-            echo -e "Running on IPv6 : ${YELLOW} ${DISPIP}" ${CLEAR}
-          fi
-        fi
-        rm -r /usr/local/nullentrydev/${nodeunit}.tmp
+  ${COINDAEMONCLI} -datadir=${COINHOME}${nodeunit}/${COINCORE} masternodedebug
+#  ${COINDAEMONCLI} -datadir=${COINHOME}${nodeunit}/${COINCORE} masternode status &> ${DPATH}SCNMN${nodeunit}.tmp
+#    if grep -q "Hot node, waiting for remote activation" ${DPATH}SCNMN${nodeunit}.tmp; then
+#      echo -e ${YELLOW} "Masternode Ready, waiting for activation from Wallet" ${CLEAR}
+#    elif grep -q "Loading block index..." ${DPATH}SCNMN${nodeunit}.tmp; then
+#    echo -e ${YELLOW} "Masternode is still loading block Index, please wait." ${CLEAR}
+#    elif grep -q "Masternode successfully started" ${DPATH}SCNMN${nodeunit}.tmp; then
+#      echo -e ${GREEN} "Masternode Successfully Started" ${CLEAR}
+#    elif grep -q "Masternode not found in the list of available masternodes. Current status: Node just started, not yet activated" ${DPATH}SCNMN${nodeunit}.tmp; then
+#      echo -e ${YELLOW} "Masternode is loading blocks, Please Wait " ${CLEAR}
+#    elif grep -q "error: couldn't connect to server" ${DPATH}SCNMN${nodeunit}.tmp; then
+#      echo -e ${RED} "Masternode not running, Please Start"
+#      echo
+#      echo -e ${GREEN} "Would you like to attempt to start the Masternode? (Y/N) "
+#      read -p "Enter choice : " choice
+#      case $choice in
+#        y) Function_Start_Masternode ;;
+#        Y) Function_Start_Masternode ;;
+#        n) echo -e "backing out" ;;
+#        N) echo -e "backing out" ;;
+#        *) echo -e "${RED}Error...${STD}" ${CLEAR} && sleep 2
+#      esac
+#    fi
+#      ${COINDAEMONCLI} -datadir=${COINHOME}${nodeunit}/${COINCORE} masternode status &> ${DPATH}${nodeunit}.tmp
+#      DISPIP=$(sed -n '4p' < /usr/local/nullentrydev/${nodeunit}.tmp | cut -d'"' -f4 | cut -d':' -f1)
+#        if [[ "$DISPIP" =~ (([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5])\.([01]{,1}[0-9]{1,2}|2[0-4][0-9]|25[0-5]))$ ]]; then
+#          echo -e "Running on IPv4 :${YELLOW} ${DISPIP}" ${CLEAR}
+#        else
+#          #tracing problem in 2-3 lines above
+#        DISPIP=$(sed -n '4p' < /usr/local/nullentrydev/${nodeunit}.tmp | cut -d'"' -f4 | cut -d':' -f1-8)
+#          if [ ! -z "$DISPIP" ]; then
+#            echo -e "Running on IPv6 : ${YELLOW} ${DISPIP}" ${CLEAR}
+#          fi
+#        fi
+#        rm -r /usr/local/nullentrydev/${nodeunit}.tmp
   #        echo "Running on IP : ${DISPIP}"
   SCNOld="1"
   SCN=$SCN+1
@@ -1213,6 +1214,8 @@ esac
   echo ${RED}"Installing Dependencies & Software Libraries"${CLEAR}
   sudo apt-get -y install software-properties-common
   sudo apt-get -y install build-essential
+#need dialog for menus
+  sudo apt-get -y install dialog
   sudo apt-get -y install libtool autotools-dev autoconf automake
   sudo apt-get -y install libssl-dev
   sudo apt-get -y install libevent-dev
@@ -1241,6 +1244,7 @@ esac
         else
           if [ -d /home/${COINl}1 ]; then
           echo -e ${GREEN}"Found ${COINl} Masternode Installation Found - /home/${COINl}" ${CLEAR}
+          echo Test this point 1a
           #Test_Pause
         else
         #install FirstMasternode - Start!
