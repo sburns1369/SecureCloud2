@@ -159,7 +159,7 @@ local NULLREC
     #need to add menu
     6) manager_stop_Masternodes ;;
     #need to add menu
-    7) function_masternode_upgrade ;;
+    7) Function_Masternode_Upgrade ;;
     #need to add
     8) function_menu_Reindex_Masternodes ;;
     x) exit 0;;
@@ -1504,7 +1504,8 @@ fi
   #limit installation to 10
   #}
   ### Start - Masternode function_Masternode_upgrade
-  function_masternode_upgrade(){
+  Function_Masternode_Upgrade(){
+ #this needs to be corrected to wallet cli and daemon swap
     clear
     echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     echo "  How Many Masternode Do you want to Run?"
