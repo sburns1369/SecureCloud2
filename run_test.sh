@@ -1585,7 +1585,8 @@ fi
   #Donation address for scriptworks and main projects
   #color code to seperate them
       clear
-      dialog --title 'Where to Donate' --msgbox 'Donations to the Secure Cloud Network (SCN) can be made to' 12 40
+      dialog --title 'Where to Donate' --msgbox 'Donations to the Secure Cloud Network (SCN) can be made to / /
+      BTC address: need btc wallet /' 12 40
       echo
       echo
       echo
