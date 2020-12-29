@@ -1588,7 +1588,7 @@ fi
       clear
       dialog --clear \
        --title 'Where to Donate' \
-       --textbox donate.nep 25 90
+       --textbox https://raw.githubusercontent.com/sburns1369/securecloud2/master/donate.nep 25 90
   }
 Function_IP_Table_Check(){
     if [ ! -f ${DPATH}ip.tbl ]; then
