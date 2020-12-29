@@ -1585,7 +1585,7 @@ fi
   #Donation address for scriptworks and main projects
   #color code to seperate them
       clear
-      dialog --title 'Where to Donate' --msgbox 'Donations test' 5 20
+      dialog --title 'Where to Donate' --msgbox 'Donations to the Secure Cloud Network (SCN) can be made to' 12 40
       echo
       echo
       echo
