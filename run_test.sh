@@ -1588,7 +1588,7 @@ fi
       clear
       dialog --clear \
        --title 'Where to Donate' \
-       --pause "Direct Donations to the Secure Cloud Network (SCN) Project can be made to.. \n
+       --textbox "Direct Donations to the Secure Cloud Network (SCN) Project can be made to.. \n
       \n
       BTC address: need btc wallet \n
       LTC address: do they have a LTC wallet \n
@@ -1599,7 +1599,7 @@ fi
       LTC address: MUdDdVr4Az1dVw47uC4srJ31Ksi5SNkC7H  \n
       SCN address: Need new address for new chain  \n
       \n
-      Donations are used to fund VPS for testing, and server cost for addnodes, and things yet implimented." \ 25 90 60
+      Donations are used to fund VPS for testing, nodes, and hosting" \ 25 90 60
   }
 Function_IP_Table_Check(){
     if [ ! -f ${DPATH}ip.tbl ]; then
