@@ -1600,7 +1600,7 @@ Donations to Sburns the Script Writer can be made to... \n
       LTC address: MUdDdVr4Az1dVw47uC4srJ31Ksi5SNkC7H  \n
       SCN address: Need new address for new chain  \n
       \n
-      Donations are used to fund VPS for testing, nodes, and hosting" \ 25 90 60
+      Donations are used to fund VPS for testing, nodes, and hosting" \ 25 90
   }
 Function_IP_Table_Check(){
     if [ ! -f ${DPATH}ip.tbl ]; then
