@@ -1586,11 +1586,11 @@ fi
   #color code to seperate them
       clear
       dialog --title 'Where to Donate' --msgbox " " \
-      'Direct Donations to the Secure Cloud Network (SCN) Project can be made to..' \
-      'BTC address: need btc wallet' \
-      'LTC address: do they have a LTC wallet' \
-      'SCN address: need main project donation address ' \
-      ' ' \ 12 80
+      "Direct Donations to the Secure Cloud Network (SCN) Project can be made to.." \
+      "BTC address: need btc wallet" \
+      "LTC address: do they have a LTC wallet" \
+      "SCN address: need main project donation address " \
+      " " \ 12 80
       echo -e "Donations to Sburns the Script Writer can be made to..."
       echo
       #update addresses?
