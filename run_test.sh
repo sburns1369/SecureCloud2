@@ -1585,7 +1585,7 @@ fi
   #Donation address for scriptworks and main projects
   #color code to seperate them
       clear
-      dialog --title 'Where to Donate' --msgbox " " \
+      dialog --title 'Where to Donate' --pause " " \
       "Direct Donations to the Secure Cloud Network (SCN) Project can be made to.." \
       "BTC address: need btc wallet" \
       "LTC address: do they have a LTC wallet" \
