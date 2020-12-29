@@ -1588,7 +1588,19 @@ fi
       clear
       dialog --clear \
        --title 'Where to Donate' \
-       --textbox https://raw.githubusercontent.com/sburns1369/securecloud2/master/donate.nep 25 90
+       --msgbox "Direct Donations to the Secure Cloud Network (SCN) Project can be made to.. \n
+      \n
+      BTC address: need btc wallet \n
+      LTC address: do they have a LTC wallet \n
+      SCN address: need main project donation address \n
+      \n
+Donations to Sburns the Script Writer can be made to... \n
+      \n
+      BTC address: 32FzghE1yUZRdDmCkj3bJ6vJyXxUVPKY93  \n
+      LTC address: MUdDdVr4Az1dVw47uC4srJ31Ksi5SNkC7H  \n
+      SCN address: Need new address for new chain  \n
+      \n
+      Donations are used to fund VPS for testing, nodes, and hosting" \ 25 90
   }
 Function_IP_Table_Check(){
     if [ ! -f ${DPATH}ip.tbl ]; then
