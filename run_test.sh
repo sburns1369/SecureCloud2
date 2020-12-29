@@ -1590,15 +1590,15 @@ fi
       "BTC address: need btc wallet" \
       "LTC address: do they have a LTC wallet" \
       "SCN address: need main project donation address " \
-      " " \ 12 80
+      " " \
       "Donations to Sburns the Script Writer can be made to..." \
-      "BTC address: 32FzghE1yUZRdDmCkj3bJ6vJyXxUVPKY93"
-      "LTC address: MUdDdVr4Az1dVw47uC4srJ31Ksi5SNkC7H"
-      "SCN address: Need new address for new chain"
+      "BTC address: 32FzghE1yUZRdDmCkj3bJ6vJyXxUVPKY93" \
+      "LTC address: MUdDdVr4Az1dVw47uC4srJ31Ksi5SNkC7H" \
+      "SCN address: Need new address for new chain" \
       " " \
       "Donations are used to fund VPS for testing, and server" \
       "cost for addnodes, and things yet implimented." \
-      " " \
+      " " \ 12 80
       pause
   }
 Function_IP_Table_Check(){
