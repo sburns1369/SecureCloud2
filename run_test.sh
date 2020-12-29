@@ -1587,9 +1587,9 @@ fi
       clear
       dialog --clear \
        --title 'Where to Donate' \
-       --pause "Direct Donations to the Secure Cloud Network (SCN) Project can be made to.. BTC address: need btc wallet LTC address: do they have a LTC wallet SCN address: need main project donation address" \
-      "Donations to Sburns the Script Writer can be made to...    BTC address: 32FzghE1yUZRdDmCkj3bJ6vJyXxUVPKY93  LTC address: MUdDdVr4Az1dVw47uC4srJ31Ksi5SNkC7H  SCN address: Need new address for new chain " \
-      "Donations are used to fund VPS for testing, and server cost for addnodes, and things yet implimented." \ 25 80
+       --pause "Direct Donations to the Secure Cloud Network (SCN) Project can be made to.. BTC address: need btc wallet LTC address: do they have a LTC wallet SCN address: need main project donation address \n
+      Donations to Sburns the Script Writer can be made to...    BTC address: 32FzghE1yUZRdDmCkj3bJ6vJyXxUVPKY93  LTC address: MUdDdVr4Az1dVw47uC4srJ31Ksi5SNkC7H  SCN address: Need new address for new chain  \n
+      Donations are used to fund VPS for testing, and server cost for addnodes, and things yet implimented." \ 25 80
   }
 Function_IP_Table_Check(){
     if [ ! -f ${DPATH}ip.tbl ]; then
